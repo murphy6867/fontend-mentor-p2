@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    @font-face {
+      font-family: HankenGrotesk-Medium;
+      src: url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: HankenGrotesk-Medium;
+    }
+
+    body {
+      background-color: #FFFFFF;
+      max-width: 100vw;
+      min-height: 100vh;
+    }
+
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .center {
+      justify-content: center;
+      align-items: center;
+    }
+
+    main {
+      width: 100%;
+      height: 100%;
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .resultContainer {
+      background: rgb(100,66,254);
+      background: linear-gradient(180deg, rgba(100,66,254,1) 0%, rgba(77,56,245,1) 46%, rgba(50,43,234,1) 100%);
+      border-radius: 30px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      color: #D2C7FF;
+      font-size: .8rem;
+      margin-bottom: 20px;
+    }
+
+    .circle {
+      width: 220px;
+      height: 220px;
+      margin: 15px;
+      -moz-border-radius: 110px;
+      -webkit-border-radius: 110px;
+      border-radius: 110px;
+      background: rgb(78,34,202);
+      background: linear-gradient(180deg, rgba(78,34,202,1) 0%, rgba(67,46,226,1) 46%, rgba(69,50,236,1) 100%);
+    }
+
+    .resultNumber {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .circle :last-child {
+      color: #8375FF;
+      font-size: 18px;
+    }
+
+    .bottom {
+      text-align: center;
+      margin: 20px 75px;
+    }
+
+    .bottom :first-child {
+      color: #FDFEFF;
+      margin-bottom: 15px;
+    }
+
+    .bottom :last-child {
+      color: #D1CCFF;
+      font-size: 1.1rem;
+    }
+
+    .sumaryContainer {
+      background: #fff;
+    }
+    
+    .sumaryContainer  {
+      justify-content: center;
+      padding: 20px 40px;
+    }
+
+    .attributesContainer {
+      padding: 10px 0 30px 0;
+      font-size: .6rem;
+    }
+
+    .attChild {
+      background-color: teal;
+      margin: 8px 0;
+      padding: 15px 15px;
+      border-radius: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .att1 {
+      background-color: #FFF6F6;
+      color: #BC6264;
+    }
+
+    .att2 {
+      background-color: #FFFBF2;
+      color: #D4BA6A;
+    }
+
+    .att3 {
+      background-color: #F3FAFA;
+      color: #3E9885;
+    }
+
+    .att4 {
+      background-color: #F3F3FD;
+      color: #2C327E;
+    }
+
+    .button {
+      padding: 15px 5px;
+      border-radius: 40px;
+      background-color: #303B59;
+      color: #F9FFFF;
+      font-size: 1.2rem;
+      border: 0;
+    }
+
+    @media (min-width: 768px) {
+
+      main {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .componentContainer {
+        width: 800px;
+        min-height: 550px;
+        background-color: #FFFFFF;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: row;
+        box-sizing: content-box;
+      }
+
+      .resultContainer {
+        width: 50%;
+        height: 100%;
+      }
+
+      .sumaryContainer {
+        width: 40%;
+        height: 90%;
+        border-radius: 30px;
+      }
+    }
+
+    @media (max-width: 767px) {
+
+      main {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .componentContainer {
+        max-width: 100vw;
+        min-height: 100vh;
+        background-color: #fff;
+      }
+
+      .resultContainer {
+        padding-top: 25px;
+        border-radius: 0 0 40px 40px;
+      }
+    }
+
+  </style>
+</head>
+<body class="center flex-col">
+  <main role="main">
+    <div class="componentContainer">
+      <div class="resultContainer flex-col center">
+        <div class="header"><h1>Your Result</h1></div>
+        <div class="circle flex-col center">
+          <h1 class="resultNumber">76</h1> 
+          <p>of 100</p>
+        </div>
+        <div class="bottom">
+          <h1>Great</h1>
+          <p>Your scored higher than 65% of the people who have taken these tests.</p>
+        </div>
+      </div>
+      <div class="sumaryContainer flex-col">
+        <h1 style="font-size:1.7rem;margin-bottom:10px;">Summary</h1>
+        <div class="attributesContainer flex-col">
+          <div class="attChild att1 flex-row">
+            <div class="flex-row">
+              <img src="./assets/images/icon-reaction.svg" alt="icon-energy">
+              <h1 style="margin-left: 10px;">Reaction</h1>
+            </div>
+            <div class="flex-row">
+              <h1 style="color:#2B2C3E">80</h1>
+              <h1 style="color:#9E989D;margin-left:8px;">/ 100</h1>
+            </div>
+          </div>
+          <div class="attChild att2 flex-row">
+            <div class="flex-row">
+              <img src="./assets/images/icon-memory.svg" alt="icon-brain">
+              <h1 style="margin-left: 10px;">Memory</h1>
+            </div>
+            <div class="flex-row">
+              <h1 style="color:#2B2C3E">92</h1>
+              <h1 style="color:#9E989D;margin-left:8px;">/ 100</h1>
+            </div>
+          </div>
+          <div class="attChild att3 flex-row">
+            <div class="flex-row">
+              <img src="./assets/images/icon-verbal.svg" alt="icon-textbox">
+              <h1 style="margin-left: 10px;">Verbal</h1>
+            </div>
+            <div class="flex-row">
+              <h1 style="color:#2B2C3E">61</h1>
+              <h1 style="color:#9E989D;margin-left:8px;">/ 100</h1>
+            </div>
+          </div>
+          <div class="attChild att4 flex-row">
+            <div class="flex-row">
+              <img src="./assets/images/icon-visual.svg" alt="icon-eye">
+              <h1 style="margin-left: 10px;">Visual</h1>
+            </div>
+            <div class="flex-row">
+              <h1 style="color:#2B2C3E">72</h1>
+              <h1 style="color:#9E989D;margin-left:8px;">/ 100</h1>
+            </div>
+          </div>
+        </div>
+        <input type="submit" value="Continue" class="button">
+      </div>
+    </div>
+  </main>
+  <footer class="attribution" style="margin-top: 20px; text-align:center">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Sonsawan Ngamsom</a>.
+  </footer>
+</body>
+</html>
